@@ -1,23 +1,17 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <h2> {{posts.length}} </h2>
-  </div>
+    <div class="home">
+        <h2>Nombre de posts : {{ posts.length }}</h2>
+    </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import {mapState} from "vuex"
+import { mapState } from "vuex";
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  },
-  computed:{
-    ...mapState(['posts'])
-  }
-}
+    name: "Home",
+    computed: {
+        ...mapState(["posts"]),
+    },
+};
 </script>
