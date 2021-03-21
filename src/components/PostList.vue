@@ -1,25 +1,40 @@
-<template>
-      <table>
-            <div v-for="post in posts" v-bind:key="post">
-                  <thead>
-                        <tr>
-                              <th colspan="2"></th>
-                        </tr>
-                  </thead>
-                  <tbody>
-                        <router-link :to="post.title">
-                              <tr>
-                                    
-                                    <!-- <td>{{ post.metaTitle }}</td>
-                                    <td>{{ post.metaDescription }}</td> -->
-                                    <td><img :src="post.imageUrl" alt="Image"></td>
-                                    <td> Title: <strong> {{ post.title }} </strong> <br> <br> {{ post.content }}</td>
-                              </tr>
-                        </router-link>
-                  </tbody>
-            </div>
+<style scoped>
+      .post{
+            margin: auto;
+            border: 2px solid black;
+            margin-top: 15px;
+            width: 950px;
+      }
+      .container{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 900px;
+      }
+      .container img{
+            width: 350px;
+            height: 231px;
+            object-fit: cover;
+      }
+      .container p{
+            margin: 0px 10px;
+            width: 580px;
+      }
+</style>
 
-      </table>
+<template>
+      <div>
+            <div class="post" v-for="post in posts" v-bind:key="post" >
+                  <h2>{{post.title}}</h2>
+                  <div class="container">
+                        <img :src="post.imageUrl" alt="lorem picsum">
+                        <p>{{post.content}}</p>
+                  </div>
+            </div>
+      </div>
+
 </template>
 
 <script>
@@ -35,16 +50,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-img{
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-}
-
-tr{
-      display: flex;
-      align-items: center;
-}
-</style>
