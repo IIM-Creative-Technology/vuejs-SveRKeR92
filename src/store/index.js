@@ -15,11 +15,12 @@ export default createStore({
       }
       state.posts.push(new_post);
     },
-    EDIT_POST(state, index, newData){
-      state.posts[index]['metaTitle'] = newData.metaTitle;
-      state.posts[index]['metaDescription'] = newData.metaDescription;
-      state.posts[index]['imageUrl'] = newData.imageUrl;
-      state.posts[index]['content'] = newData.content;
+    EDIT_POST(state, newData){
+      state.posts[newData.index]['metaTitle'] = newData.metaTitle;
+      state.posts[newData.index]['metaDescription'] = newData.metaDescription;
+      state.posts[newData.index]['imageUrl'] = newData.imageUrl;
+      state.posts[newData.index]['content'] = newData.content;
+      alert('Le post a été modifier !');
     },
     DELETE_POST(state, index){
       state.posts.splice(index, 1);

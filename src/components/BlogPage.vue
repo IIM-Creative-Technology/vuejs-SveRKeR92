@@ -1,4 +1,5 @@
 <template>
+<div>
       <h1>{{posts[index]["title"]}}</h1>
       <br>
       <br>
@@ -6,6 +7,7 @@
       <br>
       <br>
       <p> {{posts[index]["content"]}} </p>
+</div>
 </template>
 
 <script>
