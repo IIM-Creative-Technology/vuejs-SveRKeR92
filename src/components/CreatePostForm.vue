@@ -31,9 +31,11 @@ export default {
                 this.title != "" &&
                 this.metaTitle != "" &&
                 this.metaDescription != "" &&
-                this.imageUrl != "" &&
                 this.content != ""
             ) {
+                if (this.imageUrl == ""){
+                    this.imageUrl = 'https://cdn.pixabay.com/photo/2016/01/25/00/17/red-panda-1159873__340.jpg'
+                }
                   let post = {
                         title: this.title,
                         metaTitle : this.metaTitle,
@@ -41,7 +43,10 @@ export default {
                         imageUrl : this.imageUrl,
                         content: this.content
                   }
+                  alert('Le post a été créé !');
                   this.$emit('newPost', post);
+            }else{
+                alert('Certains champs sont vides');
             }
         },
     },
